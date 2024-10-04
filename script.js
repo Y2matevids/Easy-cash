@@ -45,7 +45,7 @@ function visitChannel() {
         alert("You need to watch the video for 3 minutes before visiting the channel.");
         return;
     }
-    window.open("https://www.youtube.com/@Mycryptocoin-h8f", "_blank");
+    window.open("https://www.youtube.com/channel/UCDL6PBnnd8Rwumuzvlo2AVg", "_blank");
     alert("Thank you for visiting the channel!");
 }
 
