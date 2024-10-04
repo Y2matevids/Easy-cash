@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Cash</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Easy Cash!</h1>
+        <h4>Earn money by watching YouTube videos!</h4>
+
+        <h5><u>Rules:</u></h5>
+        <ul>
+            <li>Watch the video for at least 3 minutes.</li>
+            <li>Visit the channel to subscribe.</li>
+            <li>Earn $0.50 for completing the tasks.</li>
+        </ul>
+
+        <div class="video-container">
+            <iframe id="videoPlayer" width="100%" height="315" 
+                    src="https://www.youtube.com/embed/Rqs0UoeFrOU" 
+                    title="Watch this video" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen"></iframe>
+        </div>
+
+        <div class="balance-section">
+            <h2>Your Balance: $<span id="balance">0.00</span></h2>
+            <p id="withdrawMessage" class="hidden">You can now withdraw your funds!</p>
+        </div>
+
+        <button id="watchButton" onclick="watchVideo()">Watch Video</button>
+        <button id="visitChannelButton" onclick="visitChannel()" disabled>Visit Channel</button>
+        <button id="withdrawButton" onclick="showWithdrawalOptions()">Withdraw</button>
+
+        <div id="withdrawalOptions" class="hidden">
+            <h3>Withdrawal Options</h3>
+            <p>Withdrawal transactions take up to a week to be completed.</p>
+            <button onclick="showWithdrawalMethod('paypal')">PayPal</button>
+            <button onclick="showWithdrawalMethod('phone')">Phone</button>
+            <button onclick="showWithdrawalMethod('binance')">Binance</button>
+
+            <div id="withdrawalForm" class="hidden">
+                <div id="paypalForm" class="withdrawal-method hidden">
+                    <h4>Enter your PayPal Email:</h4>
+                    <input type="email" id="paypalEmail" placeholder="Your PayPal Email">
+                    <button onclick="completeWithdrawal('paypal')">Submit</button>
+                </div>
+                <div id="phoneForm" class="withdrawal-method hidden">
+                    <h4>Enter your Phone Number:</h4>
+                    <input type="text" id="phoneNumber" placeholder="Your Phone Number">
+                    <button onclick="completeWithdrawal('phone')">Submit</button>
+                </div>
+                <div id="binanceForm" class="withdrawal-method hidden">
+                    <h4>Enter your Binance Wallet Address:</h4>
+                    <input type="text" id="binanceAddress" placeholder="Your Binance Wallet Address">
+                    <button onclick="completeWithdrawal('binance')">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h4>Contact Us</h4>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
