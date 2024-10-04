@@ -5,8 +5,8 @@ let videoTimer; // Timer for video watching
 
 const videos = [
     "Rqs0UoeFrOU", // Video 1
-    "NEW_VIDEO_ID_1", // Video 2 (replace with actual video ID)
-    "NEW_VIDEO_ID_2"  // Video 3 (replace with actual video ID)
+    "YOJPDxq_Ac4", // Video 2 
+    "Vx8A7XWuQl4"  // Video 3 
 ];
 
 function loadVideo() {
