@@ -19,6 +19,10 @@ h1 {
     color: #007bff;
 }
 
+h4 {
+    color: #007bff;
+}
+
 h5 {
     color: blue;
 }
@@ -46,6 +50,7 @@ button {
     color: white;
     cursor: pointer;
     margin-right: 10px;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 button:hover {
@@ -63,6 +68,7 @@ button:hover {
 .withdrawal-method {
     margin: 10px 0;
 }
+
 .share-section {
     margin: 20px 0;
     padding: 10px;
@@ -81,9 +87,14 @@ button:hover {
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 #shareButton:hover {
     background-color: #0056b3;
 }
 
+.withdraw-message {
+    color: #28a745; /* Green color for success messages */
+    font-weight: bold;
+}
