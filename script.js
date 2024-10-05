@@ -9,6 +9,8 @@ const videos = [
     "Vx8A7XWuQl4"  // Video 3 
 ];
 
+let hasShared = false; // Track if the user has shared the website
+
 function loadVideo() {
     const videoId = videos[currentVideoIndex];
     document.getElementById('videoPlayer').src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
@@ -49,7 +51,22 @@ function visitChannel() {
     alert("Thank you for visiting the channel!");
 }
 
+function shareWebsite() {
+    const url = encodeURIComponent(window.location.href); // Current URL
+    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+    
+    window.open(facebookShareUrl, '_blank'); // Open Facebook share dialog
+
+    hasShared = true; // Mark as shared
+    alert("Thank you for sharing! You can now withdraw your funds.");
+}
+
 function showWithdrawalOptions() {
+    if (!hasShared) {
+        alert("Please share our website on Facebook before you can withdraw.");
+        return; // Prevent withdrawal options from showing
+    }
+    
     document.getElementById('withdrawalOptions').classList.toggle('hidden');
 }
 
@@ -85,6 +102,8 @@ function completeWithdrawal(method) {
     }
     
     document.getElementById('withdrawalOptions').classList.add('hidden');
+    hasShared = false; // Reset share status after withdrawal
+    alert("Your withdrawal request has been processed!");
 }
 
 function checkWithdrawalEligibility() {
@@ -97,25 +116,3 @@ function checkWithdrawalEligibility() {
 
 // Load the first video on page load
 loadVideo();
-let hasShared = false; // Track if the user has shared the website
-
-function shareWebsite() {
-    const url = encodeURIComponent(window.location.href); // Current URL
-    const facebookShareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-    
-    window.open(facebookShareUrl, '_blank'); // Open Facebook share dialog
-
-    hasShared = true; // Mark as shared
-    alert("Thank you for sharing! You can now withdraw your funds.");
-}
-
-function showWithdrawalOptions() {
-    if (!hasShared) {
-        alert("Please share our website on Facebook before you can withdraw.");
-        return; // Prevent withdrawal options from showing
-    }
-    
-    document.getElementById('withdrawalOptions').classList.toggle('hidden');
-}
-
-// Rest of your existing JavaScript code...
