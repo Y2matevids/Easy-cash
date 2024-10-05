@@ -63,3 +63,27 @@ button:hover {
 .withdrawal-method {
     margin: 10px 0;
 }
+.share-section {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px dashed #007bff;
+    background-color: #f9f9f9;
+}
+
+.share-section h4 {
+    color: #007bff;
+}
+
+#shareButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#shareButton:hover {
+    background-color: #0056b3;
+}
+
